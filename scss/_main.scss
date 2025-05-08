@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(30deg, #224, #001);
+  overflow: hidden;
+}
+
+$size: 300px;
+$m-size: 40vmin;
+
+.box {
+  width: $size;
+  height: $size;
+  // background-color: rgba(255, 0, 0, 0.4);
+  transform-style: preserve-3d;
+  transform: perspective(40rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 90, 0, 0.4);
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), rgba(255, 5, 5, 0.3));
+  color: #2ab7ca;
+  pointer-events: none;
+  transform-origin: 50% 50% ($size / 2);
+
+  box-shadow: 0 0 50px 5px rgba(255, 5, 5, 0.3);
+  text-shadow: 0 0 20px #000;
+  font-size: 2rem;
+  transition: transform 0.5s ease-out, font-size 0.3s ease-in-out;
+
+  @media (max-width: 768px) {
+    width: $m-size;
+    height: $m-size;
+    transform-origin: 50% 50% ($m-size / 2);
+    font-size: 1.4rem;
+  }
+
+  .top,
+  .left,
+  .right,
+  .bottom,
+  .front {
+    height: $size;
+    width: $size;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 90, 0, 0.4);
+    transform-style: preserve-3d;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), rgba(255, 5, 5, 0.3));
+    box-shadow: 0 0 50px 5px rgba(255, 5, 5, 0.3);
+
+    @media (max-width: 768px) {
+      width: $m-size;
+      height: $m-size;
+    }
+  }
+
+  .right {
+    // background-color: rgba(0, 255, 0, 0.5);
+    transform: rotateY(90deg);
+    transform-origin: right;
+    position: absolute;
+
+    .label {
+      transform: rotateY(-90deg);
+    }
+  }
+
+  .left {
+    // background-color: rgba(0, 255, 0, 0.5);
+    transform: rotateY(-90deg);
+    transform-origin: left;
+
+    .label {
+      transform: rotateY(90deg);
+    }
+  }
+
+  .bottom {
+    // background-color: rgba(0, 0, 255, 0.5);
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+
+    .label {
+      transform: rotateX(90deg);
+    }
+  }
+
+  .top {
+    // background-color: rgba(0, 0, 255, 0.5);
+    transform: rotateX(90deg);
+    transform-origin: top;
+
+    .label {
+      transform: rotateX(-90deg);
+    }
+  }
+
+  .front {
+    // background-color: rgba(0, 255, 0, 0.1);
+    transform: translateZ($size);
+    transform-origin: top;
+
+    @media (max-width: 768px) {
+      transform: translateZ($m-size);
+    }
+  }
+}

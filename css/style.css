@@ -1,0 +1,149 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(30deg, #224, #001);
+  overflow: hidden;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: perspective(40rem);
+          transform: perspective(40rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid rgba(255, 90, 0, 0.4);
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), rgba(255, 5, 5, 0.3));
+  color: #2ab7ca;
+  pointer-events: none;
+  -webkit-transform-origin: 50% 50% 150px;
+          transform-origin: 50% 50% 150px;
+  -webkit-box-shadow: 0 0 50px 5px rgba(255, 5, 5, 0.3);
+          box-shadow: 0 0 50px 5px rgba(255, 5, 5, 0.3);
+  text-shadow: 0 0 20px #000;
+  font-size: 2rem;
+  -webkit-transition: font-size 0.3s ease-in-out, -webkit-transform 0.5s ease-out;
+  transition: font-size 0.3s ease-in-out, -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, font-size 0.3s ease-in-out;
+  transition: transform 0.5s ease-out, font-size 0.3s ease-in-out, -webkit-transform 0.5s ease-out;
+}
+@media (max-width: 768px) {
+  .box {
+    width: 40vmin;
+    height: 40vmin;
+    -webkit-transform-origin: 50% 50% 20vmin;
+            transform-origin: 50% 50% 20vmin;
+    font-size: 1.4rem;
+  }
+}
+.box .top,
+.box .left,
+.box .right,
+.box .bottom,
+.box .front {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid rgba(255, 90, 0, 0.4);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), rgba(255, 5, 5, 0.3));
+  -webkit-box-shadow: 0 0 50px 5px rgba(255, 5, 5, 0.3);
+          box-shadow: 0 0 50px 5px rgba(255, 5, 5, 0.3);
+}
+@media (max-width: 768px) {
+  .box .top,
+  .box .left,
+  .box .right,
+  .box .bottom,
+  .box .front {
+    width: 40vmin;
+    height: 40vmin;
+  }
+}
+.box .right {
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  position: absolute;
+}
+.box .right .label {
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+}
+.box .left {
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+.box .left .label {
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}
+.box .bottom {
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+.box .bottom .label {
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+}
+.box .top {
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+}
+.box .top .label {
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+}
+.box .front {
+  -webkit-transform: translateZ(300px);
+          transform: translateZ(300px);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+}
+@media (max-width: 768px) {
+  .box .front {
+    -webkit-transform: translateZ(40vmin);
+            transform: translateZ(40vmin);
+  }
+}/*# sourceMappingURL=style.css.map */
